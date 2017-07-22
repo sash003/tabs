@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+
+::selection {
+  background-color: #3a9289;
+}
+
+.tabbed {
+  background: url(http://subtlepatterns.com/patterns/use_your_illusion.png);
+  color: #eee;
+  width: 70%;
+  margin: 50px auto;
+  border: 2px solid #3a9289;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 17px;
+  text-shadow: none;
+}
+
+.tabbed *{
+  text-shadow: none !important;
+}
+
+.tabbed > input {
+  display: none;
+}
+
+.tabbed > label {
+  display: block;
+  float: left;
+  padding: 12px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+  font-weight: bold;
+}
+
+.tabbed > label:hover,
+.tabbed > input:checked + label {
+  background: #3a9289;
+}
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+  position: relative;
+}
+
+.tabs > div {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #3a9289;
+  border-top: 2px solid #3a9289;
+  padding: 10px 30px 10px;
+  line-height: 1.4;
+  transform-origin: top center;
+  display: none;
+}
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
+  display: block;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .tabbed{
+    width: 90%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .tabbed label{
+    padding: 7px;
+  }
+  .tabs > div {
+    font-size: .9em;
+    line-height:1.2; 
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .tabs > div {
+    font-size: .7em;
+  }
+}
